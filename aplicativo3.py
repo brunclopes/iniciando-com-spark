@@ -1,14 +1,14 @@
-# criando o primeiro aplicativo
+# Criando o primeiro aplicativo
 
 import sys, getopt
 
-#iniciando a sessão do spark
+# Iniciando a sessão do spark
 from pyspark.sql import SparkSession
 
-# importando as funções (para calcular o ano)
+# Importando as funções (para calcular o ano)
 from pyspark.sql.functions import * 
 
-# criando o módulo
+# Criando o módulo
 if __name__ == "__main__":
 	spark = SparkSession.builder.appName("Exemplo").getOrCreate()
 	opts, args = getopt.getopt(sys.argv[1:], "t:i:o:")
@@ -27,8 +27,8 @@ if __name__ == "__main__":
 	
 	spark.stop()
 
-#chamando o arquivo no terminal: spark-submit aplicativo3.py -t parquet -i /home/bruno/download/despachantes.csv -o /home/bruno/testesparquet/
+# Chamando o arquivo no terminal: spark-submit aplicativo3.py -t parquet -i /home/bruno/download/despachantes.csv -o /home/bruno/testesparquet/
 
-#novo teste: spark-submit aplicativo3.py -t orc -i /home/bruno/download/reclamacoes.csv -o /home/bruno/testesorc/
+# Novo teste: spark-submit aplicativo3.py -t orc -i /home/bruno/download/reclamacoes.csv -o /home/bruno/testesorc/
 
-#novo teste: spark-submit aplicativo3.py -t json -i /home/bruno/download/reclamacoes.csv -o /home/bruno/testesjson/
+# Novo teste: spark-submit aplicativo3.py -t json -i /home/bruno/download/reclamacoes.csv -o /home/bruno/testesjson/

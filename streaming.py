@@ -14,4 +14,4 @@ if __name__ == "__main__":
 	
 	stcal.awaitTermination()
 	
-# chamando o processo: spark-submit streaming.py
+# Chamando o processo: spark-submit streaming.py

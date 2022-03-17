@@ -1,13 +1,13 @@
-# faça você mesmo - teste
+# Faça você mesmo - teste
 
-#criando o banco de dados 
-# sudo -u postgres psql
+# Criando o banco de dados 
+#sudo -u postgres psql
 #create database tabelas
 
-#conectando ao banco de dados
-# \c tabelas;
+# Conectando ao banco de dados
+#\c tabelas;
 
-# criando aplicação
+# Criando aplicação:
 
 import sys. getopt
 from pyspark.sql import SparkSession
@@ -22,14 +22,14 @@ if __name__=="__main__":
 		elif opt == "-t":
 			tabela = arg
 	
-	#lendo o arquivo 
+	# Lendo o arquivo 
 	df = spark.read.load(arquivo)
 	df.write.format("jdbc").option("url","jdbc:postgresql://localhost:5432/-tabelas").option("dbtable",tabela).option("user","postgres").option("password","19941994").option("driver","org.postgresql.Driver")
 	
 	spark.stop()
 	
 
-# chamando o arquivo: spark-submit --jars /home/bruno/postgresql-42.3.3.jar tabelas.py -a /home/bruno/download/Atividades/Vendas.parquet -t Vendas 
+# Chamando o arquivo: spark-submit --jars /home/bruno/postgresql-42.3.3.jar tabelas.py -a /home/bruno/download/Atividades/Vendas.parquet -t Vendas 
 
-# verificando no banco 
-# select * from vendas
+# Verificando no banco 
+#select * from vendas
